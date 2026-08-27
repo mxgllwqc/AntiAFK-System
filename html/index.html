@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>antiafk</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="afk">
+  <div class="inner">
+    <h1 id="title">WERYFIKACJA AKTYWNOŚCI</h1>
+    <p id="subtitle">Wykryto brak aktywności. Przepisz poniższy kod, aby pozostać na serwerze.</p>
+
+    <div class="code" id="code">ABC123</div>
+
+    <input id="input" maxlength="12" autocomplete="off" spellcheck="false" placeholder="wpisz kod">
+    <div id="error"></div>
+    <div id="timer"><span id="timerLabel">Pozostały czas</span>: <b id="time">30s</b></div>
+
+    <small id="warning">Zostaniesz wyrzucony z serwera po upływie czasu!</small>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

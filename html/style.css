@@ -1,0 +1,122 @@
+:root {
+  --orange: #ff8c1a;
+  --text: #fff;
+  --text-dim: rgba(255, 255, 255, .65);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: visible;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: transparent;
+}
+
+#afk {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(14px) brightness(.55);
+  -webkit-backdrop-filter: blur(14px) brightness(.55);
+}
+
+#afk.open { display: flex; }
+
+#afk .inner {
+  width: 420px;
+  max-width: 90vw;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+#afk.open .inner {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#afk h1 {
+  margin: 0 0 6px;
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, .5);
+}
+
+#afk p {
+  margin: 0 0 20px;
+  color: var(--text-dim);
+  font-size: 13.5px;
+  line-height: 1.5;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, .5);
+}
+
+.code {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px 24px;
+  background: var(--orange);
+  color: #1a1200;
+  font-family: 'Courier New', monospace;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 8px;
+  border-radius: 8px;
+}
+
+.code.shake { animation: shake .35s ease; }
+
+@keyframes shake {
+  20% { transform: translateX(-8px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(3px); }
+}
+
+#afk input {
+  display: block;
+  width: 200px;
+  margin: 0 auto 16px;
+  padding: 8px 0;
+  background: none;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, .35);
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: 3px;
+  text-align: center;
+  text-transform: uppercase;
+  outline: none;
+}
+
+#afk input:focus { border-bottom-color: var(--orange); }
+#afk input::placeholder { color: rgba(255, 255, 255, .35); letter-spacing: 1px; }
+
+#error {
+  height: 16px;
+  margin-bottom: 10px;
+  color: #ff6161;
+  font-size: 12px;
+  font-weight: 600;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, .5);
+}
+
+#timer {
+  margin-bottom: 14px;
+  color: var(--text-dim);
+  font-size: 12px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, .5);
+}
+
+#timer b { color: var(--orange); }
+
+#afk small {
+  color: rgba(255, 255, 255, .4);
+  font-size: 11px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, .5);
+}
